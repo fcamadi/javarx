@@ -1,4 +1,4 @@
-package org.francd.section2.schedulers;
+package org.francd.section2.concurrency_parallelization;
 
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;

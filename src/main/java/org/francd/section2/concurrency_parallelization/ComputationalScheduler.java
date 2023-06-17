@@ -1,21 +1,18 @@
-package org.francd.section2.schedulers;
+package org.francd.section2.concurrency_parallelization;
 
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class NewThreadScheduler {
+public class ComputationalScheduler {
     public static void main(String[] args) throws InterruptedException {
 
         System.out.println("Number of available cores: "+
             Runtime.getRuntime().availableProcessors());
 
         Observable<String> source = Observable.just("anda ya", "vamos hombre", "que dices tia", "ni loco", "me tomas el pelo")
-                        .subscribeOn(Schedulers.newThread());
+                        .subscribeOn(Schedulers.computation());
 
         source.subscribe( e -> computeSomething());
-
-        Thread.sleep(4000);
-
         source.subscribe( e -> computeSomething());
         source.subscribe( e -> computeSomething());
         source.subscribe( e -> computeSomething());
